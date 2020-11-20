@@ -9,6 +9,15 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.Map;
 
+/**
+ * Every time when a furnace want to know the burn time of an item or to check if an item is burnable, it will call
+ * the method {@link AbstractFurnaceBlockEntity#createFuelTimeMap}. It might cause quite a lot of lag when there are
+ * lots of hoppers trying to insert a whatever item into the fuel slot of furnaces.
+ * Notice that the return Map of createFuelTimeMap is always the same, so caching the result permanently will boost
+ * the performance quite a lot.
+ * It might mess things up if other mods dynamically add some extra fuel information, but that's another thing
+ * @author Fallen_Breath
+ */
 @Mixin(AbstractFurnaceBlockEntity.class)
 public abstract class AbstractFurnaceBlockEntityMixin
 {
