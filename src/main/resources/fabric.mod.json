@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "id": "template_mod",
+  "id": "fueltimecache",
   "version": "1.0.0",
 
-  "name": "template_mod",
-  "description": "",
+  "name": "Fuel Time Cache",
+  "description": "Cache fuel time map in furnace class to avoid costly map generating each time ",
   "authors": [
     "Fallen_Breath"
   ],
   "contact": {
-    "homepage": "https://www.curseforge.com/",
-    "sources": "https://github.com/"
+    "homepage": "https://github.com/Fallen-Breath/FuelTimeCache",
+    "sources": "https://github.com/Fallen-Breath/FuelTimeCache"
   },
 
-  "icon": "assets/template_mod/icon.png",
+  "icon": "assets/fueltimecache/icon.png",
 
   "environment": "*",
   "entrypoints": {
@@ -21,12 +21,11 @@
     ]
   },
   "mixins": [
-    "template_mod.mixins.json"
+    "fueltimecache.mixins.json"
   ],
 
   "depends": {
-    "fabricloader": ">=0.7.1",
-    "minecraft": "1.15.x"
+    "fabricloader": ">=0.7.1"
   },
   "suggests": {
     "flamingo": "*"
